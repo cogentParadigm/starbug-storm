@@ -1,0 +1,207 @@
+:root {
+  --input-padding-vertical: var(--spacing-small);
+  --input-padding-horizontal: var(--spacing-medium);
+  --input-padding: var(--input-padding-vertical) var(--input-padding-horizontal);
+  --input-bg: var(--white);
+  --input-border-color: var(--moon-gray);
+  --input-border: 1px solid var(--input-border-color);
+  --input-border-radius: 0.25rem;
+
+  --required-input-asterisk-color: var(--dark-red);
+  --input-error-color: var(--dark-red);
+  --input-hover-bg: var(--near-white);
+  --input-focus-bg: var(--light-gray);
+  --input-selected-color: inherit;
+  --input-selected-bg: color-mod(var(--link-color) alpha(10%));
+}
+
+.input-reset, .form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  border-radius: 0;
+}
+
+.button-reset::-moz-focus-inner,
+.input-reset::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: var(--spacing-medium);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: var(--input-padding);
+  background: var(--input-bg);
+  border: var(--input-border);
+  border-radius: var(--input-border-radius);
+  &:hover {
+    border-color: currentColor;
+  }
+}
+
+.form-control:focus, .form-control.focused {
+  box-shadow: inset 0 0 0 3px var(--link-color);
+}
+
+label {
+  display: inline-block;
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+::-ms-input-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+:-moz-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+::-moz-placeholder {
+  color: currentColor;
+  opacity: 0.5;
+}
+
+.asterisk {
+  color: var(--required-input-asterisk-color);
+}
+
+.alert-danger {
+  color: var(--input-error-color);
+}
+
+.dropdown-indicator {
+  position: relative;
+}
+.dropdown-indicator{
+  &:before {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    padding: var(--input-padding);
+    pointer-events: none;
+    @extend .material-icons;
+    content: "expand_more";
+    color: var(--input-border-color);
+    line-height: calc(var(--base-font-size) * 1.5);
+  }
+  &:hover:before {
+    color: inherit;
+  }
+}
+select.form-control, .form-control.dropdown-indicator {
+  padding-right: calc(var(--input-padding-horizontal) + var(--input-padding-horizontal) + 24px);
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+  &:indeterminate + .checkbox-label:before {
+    content: "indeterminate_check_box";
+    color: var(--link-color);
+  }
+  &:checked + .checkbox-label:before {
+    content: "check_box";
+    color: var(--link-color);
+  }
+  &:checked + .checkbox-label:not(:hover) {
+    background: var(--input-selected-bg);
+  }
+  &:focus + .checkbox-label:not(:hover),
+  .focus-wrapper:focus & + .checkbox-label:not(:hover),
+  .dgrid-selected & + .checkbox-label:not(:hover) {
+    background: var(--input-focus-bg);
+  }
+}
+
+.checkbox-label {
+  padding-left: calc(var(--input-padding-horizontal) + var(--input-padding-horizontal) + 24px);
+  padding-top: var(--input-padding-vertical);
+  padding-bottom: var(--input-padding-vertical);
+  padding-right: var(--input-padding-horizontal);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  &:before {
+    @extend .material-icons;
+    content: "check_box_outline_blank";
+    color: var(--input-border-color);
+    position: absolute;
+    left: var(--input-padding-horizontal);
+  }
+  &:hover {
+    background: var(--input-hover-bg);
+  }
+}
+
+.checkbox.check-circle {
+  & + .checkbox-label {
+    display: inline-block;
+    line-height: 2rem;
+  }
+  & + .checkbox-label:before {
+    content: "cancel";
+    font-size: 2rem;
+  }
+  &:checked + .checkbox-label:before {
+    content: "check_circle";
+  }
+}
+
+.radio {
+  opacity: 0;
+  position: absolute;
+  &:checked + .radio-label:before {
+    content: "radio_button_checked";
+    color: var(--link-color);
+  }
+  &:checked + .radio-label:not(:hover) {
+    background: var(--input-selected-bg);
+  }
+  &:focus + .radio-label:not(:hover),
+  .focus-wrapper:focus & + .radio-label:not(:hover),
+  .dgrid-selected & + .radio-label:not(:hover) {
+    background: var(--input-focus-bg);
+  }
+}
+
+.radio-label {
+  padding-left: calc(var(--input-padding-horizontal) + var(--input-padding-horizontal) + 24px);
+  padding-top: var(--input-padding-vertical);
+  padding-bottom: var(--input-padding-vertical);
+  padding-right: var(--input-padding-horizontal);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  &:before {
+    @extend .material-icons;
+    content: "radio_button_unchecked";
+    color: var(--input-border-color);
+    position: absolute;
+    left: var(--input-padding-horizontal);
+  }
+  &:hover {
+    background: var(--input-hover-bg);
+  }
+}
+
+// Utilities
+// -------------------------
+// disable MS clear button in edge
+.ms-clear-dn::-ms-clear {
+  display: none;
+}
+
