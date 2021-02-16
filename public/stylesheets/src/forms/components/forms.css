@@ -40,8 +40,9 @@
   background: var(--input-bg);
   border: var(--input-border);
   border-radius: var(--input-border-radius);
+  transition: border-color 0.2s;
   &:hover {
-    border-color: currentColor;
+    border-color: color-mod(var(--input-border-color) blend(black 15%));
   }
 }
 
