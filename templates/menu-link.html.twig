@@ -1,0 +1,12 @@
+{% if active %}
+  {% set activeClass = ["white"] %}
+  {% if anchorAttributes.class is defined %}
+    {% if anchorAttributes.class is iterable %}
+      {% set activeClass = activeClass|merge(anchorAttributes.class) %}
+    {% else %}
+      {% set activeClass = activeClass|merge([anchorAttributes.class]) %}
+    {% endif %}
+  {% endif %}
+  {% set anchorAttributes = anchorAttributes|merge({"class": (activeClass|join(" "))}) %}
+{% endif %}
+{{ include("@core/menu-link.html.twig") }}
