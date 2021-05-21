@@ -59,13 +59,18 @@
 // Arrow
 .dijitArrowButtonInner {
   @extend .material-icons;
+  color: var(--input-border-color);
+  line-height: calc(var(--base-font-size) * 1.5);
+  transition: border-color 0.2s;
 }
 .dijitArrowButtonInner:before {
   content: "expand_more";
-  color: var(--input-border-color);
   .dijitTextBox:hover & {
     color: inherit;
   }
+}
+.dijitArrowButtonInner:hover {
+  color: color-mod(var(--input-border-color) blend(black 15%));
 }
 
 .dijitUpArrowButton .dijitArrowButtonInner:before {
