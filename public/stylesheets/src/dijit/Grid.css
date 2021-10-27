@@ -5,7 +5,8 @@
   --dgrid-header-bg: var(--near-white);
   --dgrid-row-border: var(--input-border);
   --dgrid-padding: var(--spacing-small) var(--spacing-medium);
-  --dgrid-selected-bg: var(--link-color);
+  --dgrid-hover-bg: var(--near-white);
+  --dgrid-selected-bg: var(--near-white);
   --dgrid-pagination-disabled-color: var(--light-gray);
   --dgrid-border-radius: 0.25rem;
 }
@@ -40,6 +41,9 @@
 
   .dgrid-row {
     margin-top: -1px;
+    &:hover {
+      background: var(--dgrid-hover-bg);
+    }
   }
 
   .dgrid-footer {
@@ -203,6 +207,17 @@
 /* selection*/
 .dgrid-selected {
   background-color: var(--dgrid-selected-bg);
+}
+
+.dgrid-selector {
+  .checkbox-label:before {
+    left: 0;
+  }
+  .checkbox-label:hover,
+  .checkbox:focus + .checkbox-label,
+  .checkbox:checked + .checkbox-label {
+    background: transparent;
+  }
 }
 
 .dgrid-input {
