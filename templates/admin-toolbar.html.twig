@@ -8,12 +8,18 @@
   {% else %}
     {% set path = helper("url").build(request.getUri().getPath() ~ "/create") %}
   {% endif %}
-  <a class="btn btn-default" href="{{ path }}">{{ new_label }}</a>
-  <a class="btn btn-default" href="javascript:window.location.href = {{ model }}_grid.collection._renderUrl().replace('json', 'csv');">
-    Export CSV <b class="fa fa-file-text-o"></b>
-  </a>
-  <a class="btn btn-default" href="{{ helper("url").build(request.getUri().getPath() ~ "/import") }}">
-    Import CSV <b class="fa fa-file-text-o"></b>
-  </a>
+  {% if enableCreateAction ?? true %}
+    <a class="btn btn-default" href="{{ path }}">{{ new_label }}</a>
+  {% endif %}
+  {% if enableExportAction ?? true %}
+    <a class="btn btn-default" href="javascript:window.location.href = {{ model }}_grid.collection._renderUrl().replace('json', 'csv');">
+      Export CSV <b class="fa fa-file-text-o"></b>
+    </a>
+  {% endif %}
+  {% if enableImportAction ?? true %}
+    <a class="btn btn-default" href="{{ helper("url").build(request.getUri().getPath() ~ "/import") }}">
+      Import CSV <b class="fa fa-file-text-o"></b>
+    </a>
+  {% endif %}
 </div>
 {{ helper("displays").render([(model|title) ~ "SearchForm", "SearchForm"], {"model": model}) }}
