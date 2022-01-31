@@ -2,7 +2,7 @@
 
 <div class="btn-group pull-right">
   {% if dialog is not empty %}
-    {% set path = "javascript:(function(){" ~ model ~ "_form.show();return false;})()" %}
+    {% set path = "javascript:(function(){" ~ model ~ "_form.show()})()" %}
   {% elseif base_url is not empty %}
     {% set path = helper("url").build(base_url ~ "/create") %}
   {% else %}
