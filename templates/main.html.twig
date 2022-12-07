@@ -11,13 +11,14 @@
     <!-- end collapse menu -->
 
     <!-- breadcrumb -->
-    <ol class="breadcrumb">
+    <ol class="breadcrumb list flex white">
       {% for crumb in helper("breadcrumbs") %}
+        {% if not loop.first %}<li><span class="ph2">&gt;</span></li>{% endif %}
         <li>
           {% if crumb.href is not defined %}
             {{ crumb.title }}
           {% else %}
-            <a href="{{ helper("url").build(crumb.href) }}">{{ crumb.title }}</a>
+            <a href="{{ helper("url").build(crumb.href) }}" class="white">{{ crumb.title }}</a>
           {% endif %}
         </li>
       {% endfor %}
