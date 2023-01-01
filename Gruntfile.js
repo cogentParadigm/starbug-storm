@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         map: {inline: false},
         parser: require("postcss-scss"),
         processors: [
-          require("postcss-import"),
+          require("postcss-import")(),
           require("postcss-import-url")({modernBrowser: true}),
           require("postcss-at-rules-variables")({
             atRules: ['for', 'if', 'else', 'each', 'mixin', 'custom-media', 'include']
@@ -16,8 +16,8 @@ module.exports = function(grunt) {
           require("postcss-extend-rule")(),
           require("postcss-advanced-variables")(),
           require("postcss-preset-env")({stage: 0}),
-          require("postcss-color-mod-function")(),
           require("postcss-property-lookup")(),
+          require("postcss-color-mod-function")(),
           require("postcss-nested")(),
           require('postcss-url')([
             {
