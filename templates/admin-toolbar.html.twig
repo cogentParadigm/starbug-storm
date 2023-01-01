@@ -22,4 +22,8 @@
     </a>
   {% endif %}
 </div>
-{{ helper("displays").render([(model|title) ~ "SearchForm", "SearchForm"], {"model": model}) }}
+{% if searchFormParams is empty %}
+  {% set searchFormParams = {} %}
+{% endif %}
+{% set searchFormParams = searchFormParams|merge({"model": model}) %}
+{{ helper("displays").render([(model|title) ~ "SearchForm", "SearchForm"], searchFormParams) }}

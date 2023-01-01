@@ -13,11 +13,12 @@ module.exports = function(grunt) {
           require("postcss-at-rules-variables")({
             atRules: ['for', 'if', 'else', 'each', 'mixin', 'custom-media', 'include']
           }),
-          require("precss")({
-            features: {
-              'color-mod-function': { unresolved: 'warn' }
-            }
-          }),
+          require("postcss-extend-rule")(),
+          require("postcss-advanced-variables")(),
+          require("postcss-preset-env")({stage: 0}),
+          require("postcss-color-mod-function")(),
+          require("postcss-property-lookup")(),
+          require("postcss-nested")(),
           require('postcss-url')([
             {
               filter: '**/fontawesome-webfont.*',

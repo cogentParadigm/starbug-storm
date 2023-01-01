@@ -2,16 +2,16 @@
 <div id="main" role="main">
 
   <!-- RIBBON -->
-  <div id="ribbon" class="bg-dark-gray pv2 ph3 flex items-center">
+  <div id="ribbon" class="bg-dark-gray flex items-center">
 
     <!-- collapse menu button -->
-    <span class="ribbon-button-alignment">
-      <span> <a href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu" style="margin:5px 10px 0 0"><i class="fa fa-reorder" style="color:#fff"></i></a> </span>
-    </span>
+    <a class="db pv2 ph3" href="javascript:void(0);" data-action="toggleMenu" title="Collapse Menu" style="line-height:22px">
+      <span class="white material-icons v-mid">menu</span>
+    </a>
     <!-- end collapse menu -->
 
     <!-- breadcrumb -->
-    <ol class="breadcrumb list flex white">
+    <ol class="breadcrumb list flex white ma0">
       {% for crumb in helper("breadcrumbs") %}
         {% if not loop.first %}<li><span class="ph2">&gt;</span></li>{% endif %}
         <li>
@@ -24,6 +24,10 @@
       {% endfor %}
     </ol>
     <!-- end breadcrumb -->
+
+    {% if helper("session").loggedIn() %}
+      {{ include("user-menu.html.twig") }}
+    {% endif %}
 
   </div>
   <!-- END RIBBON -->

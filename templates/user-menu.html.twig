@@ -1,0 +1,30 @@
+<div class="dropdown relative ml-auto">
+  <a class="link white flex justify-between items-center pv2 ph3" href="#" data-toggle="dropdown" aria-label="User menu">
+      {{ helper("session").getData("first_name") }} {{ helper("session").getData("last_name") }}
+    <span class="white material-icons">expand_more</span>
+  </a>
+  <ul class="list mb0 mt1 pl0 bg-white dropdown-menu pv2 tl shadow-4 right-0" role="menu">
+    <li class="bb b--light-gray">
+      <div class="flex items-start pa3">
+        <span class="dib b tc white bg-brand-blue br-100 mr3" style="width:2rem;line-height:2rem">
+          {{ helper("session").getData("first_name")|first }}{{ helper("session").getData("last_name")|first }}
+        </span>
+        <div>
+          <div class="f8 fw5">{{ helper("session").getData("first_name") }} {{ helper("session").getData("last_name") }}</div>
+          <div class="f8 gray">{{ helper("session").getData("email") }}</div>
+        </div>
+      </div>
+    <li>
+      <a class="link lh-solid db f8 near-black pv2 ph3" href="{{ helper("url").build("profile") }}">
+        <span class="material-icons v-mid mr2">account_circle</span>
+        My Profile
+      </a>
+    </li>
+    <li>
+      <a class="link db f8 near-black pv2 ph3" href="{{ helper("url").build("logout") }}">
+        <span class="material-icons v-mid mr2">exit_to_app</span>
+        Sign out
+      </a>
+    </li>
+  </ul>
+</div>

@@ -95,7 +95,6 @@
 // Footer (for actions)
 .modal-footer {
   padding: var(--modal-section-spacing);
-  text-align: right; // right align buttons
   border-top: var(--modal-section-border);
 }
 
