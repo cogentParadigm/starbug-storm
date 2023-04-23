@@ -9,4 +9,4 @@
   {% endif %}
   {% set anchorAttributes = anchorAttributes|merge({"class": (activeClass|join(" "))}) %}
 {% endif %}
-{{ include("@core/menu-link.html.twig") }}
+{{ include(["@menus/menu-link.html.twig", "@core/menu-link.html.twig"]) }}
