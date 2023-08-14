@@ -182,7 +182,9 @@
   -ms-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
-  overflow: hidden;
+  &[hidden] {
+    overflow: hidden;
+  }
 }
 .dgrid-tree-container.dgrid-tree-resetting {
   -webkit-transition-duration: 0;
