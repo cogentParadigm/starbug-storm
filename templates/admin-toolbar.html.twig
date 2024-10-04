@@ -6,7 +6,7 @@
   {% elseif base_url is not empty %}
     {% set path = helper("url").build(base_url ~ "/create") %}
   {% else %}
-    {% set path = helper("url").build(request.getUri().getPath() ~ "/create") %}
+    {% set path = helper("url").build(request.getUri().getPath()|trim('/') ~ "/create") %}
   {% endif %}
   {% if enableCreateAction ?? true %}
     <a class="btn btn-default" href="{{ path }}">{{ new_label }}</a>
