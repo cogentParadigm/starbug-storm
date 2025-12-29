@@ -1,0 +1,33 @@
+define([
+  "dbootstrap",
+  "sb",
+  "dojo/parser",
+  "bootstrap/Collapse",
+  "storm/main",
+  "storm/menu",
+  "sb/bootstrap/Dropdown",
+  "sb/form/Autocomplete",
+  "sb/form/CRUDList",
+  "sb/form/FileList",
+  "sb/form/MultipleSelect",
+  "sb/form/Number",
+  "sb/form/Uploader",
+  "starbug/form/Address",
+  "starbug/form/Dependency",
+  "starbug/form/Dependent",
+  "starbug/grid/PagedGrid",
+  "starbug/grid/DnDGrid",
+  "starbug/grid/columns/options",
+  "starbug/grid/columns/menu_options",
+  "starbug/grid/columns/tree",
+  "starbug/grid/columns/handle",
+  "starbug/grid/columns/html",
+  "starbug/grid/columns/import_options",
+  "starbug/media/Browser",
+  "dijit/form/Textarea",
+  "dijit/layout/TabContainer",
+  "dijit/layout/ContentPane",
+  "dojo/has!webpack?dojo-webpack-plugin/amd/dojoES6Promise"
+], function() {
+
+});

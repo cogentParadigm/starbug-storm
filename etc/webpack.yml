@@ -1,0 +1,6 @@
+---
+options:
+  entry:
+    storm: themes/storm/js/index.js
+aliases:
+  storm: themes/storm/public/js/
