@@ -11,7 +11,7 @@
     "cssnano": "^5.1.14",
     "grunt": "^1.5.3",
     "grunt-contrib-watch": "^1.0.0",
-    "postcss": "^8.4.20",
+    "postcss": "^8.4.31",
     "postcss-advanced-variables": "^3.0.1",
     "postcss-at-rules-variables": "^0.1.10",
     "postcss-calc": "^7.0.2",
